@@ -1,16 +1,19 @@
-package com.mycompany.devops_project;
+package com.mycompany.customermanagement.model;
 
 public class Item {
     private double shippingWeight;
     private String description;
     private double unitPrice;
-    private int stock;
+    private int availableStock;
 
-    public Item(double shippingWeight, String description, double unitPrice, int stock) {
+    public Item(double shippingWeight, String description, double unitPrice, int availableStock) {
+        if (shippingWeight < 0 || unitPrice < 0 || availableStock < 0) {
+            throw new IllegalArgumentException("Invalid item values");
+        }
         this.shippingWeight = shippingWeight;
         this.description = description;
         this.unitPrice = unitPrice;
-        this.stock = stock;
+        this.availableStock = availableStock;
     }
 
     public double getShippingWeight() {
@@ -22,14 +25,17 @@ public class Item {
     }
 
     public double getPriceForQuantity(int quantity) {
+        if (quantity <= 0) {
+            throw new IllegalArgumentException("Quantity must be greater than zero");
+        }
         return unitPrice * quantity;
     }
 
     public double getTax() {
-        return unitPrice * 0.10; // 10% tax
+        return unitPrice * 0.10;
     }
 
     public boolean inStock(int quantity) {
-        return stock >= quantity;
+        return availableStock >= quantity;
     }
 }

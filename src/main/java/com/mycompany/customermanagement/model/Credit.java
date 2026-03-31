@@ -1,4 +1,5 @@
-package com.mycompany.devops_project;
+package com.mycompany.customermanagement.model;
+
 public class Credit extends Payment {
     private String name;
     private String type;
@@ -11,7 +12,10 @@ public class Credit extends Payment {
         this.expDate = expDate;
     }
 
+    @Override
     public boolean authorized() {
-        return expDate != null && !expDate.isEmpty();
+        return name != null && !name.isBlank() &&
+               type != null && !type.isBlank() &&
+               expDate != null && !expDate.isBlank();
     }
 }

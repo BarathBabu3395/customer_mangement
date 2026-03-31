@@ -1,4 +1,5 @@
-package com.mycompany.devops_project;
+package com.mycompany.customermanagement.model;
+
 public class Check extends Payment {
     private String name;
     private String bankID;
@@ -9,7 +10,9 @@ public class Check extends Payment {
         this.bankID = bankID;
     }
 
+    @Override
     public boolean authorized() {
-        return bankID != null && !bankID.isEmpty();
+        return name != null && !name.isBlank() &&
+               bankID != null && !bankID.isBlank();
     }
 }

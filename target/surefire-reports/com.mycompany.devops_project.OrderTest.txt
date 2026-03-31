@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.mycompany.devops_project.OrderTest
--------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.507 s -- in com.mycompany.devops_project.OrderTest
