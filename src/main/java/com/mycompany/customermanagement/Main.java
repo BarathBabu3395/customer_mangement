@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
 
         // Customer 1 - Barath
-        Customer customer1 = new Customer("Barath", "Vellore");
+        Customer customer1 = new Customer("BarathKumar", "Vellore");
 
         Item laptopBag = new Item(2.5, "Laptop Bag", 1200.0, 10);
         Item mouse = new Item(0.5, "Wireless Mouse", 800.0, 20);
